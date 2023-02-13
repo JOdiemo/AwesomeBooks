@@ -20,24 +20,30 @@ const addBooks = (Author, Title) => {
   }
 }
 
-function display(){
+function display() {
   if (localStorage.getItem('Book1') == null) {
     books = []
   } else {
     books = JSON.parse(localStorage.getItem('Book1'))
   }
-
   let bookDisplay = ``;
   books.forEach((element, i) => {
     bookDisplay += `
-    <div>
-    <p>${element.title}<p>
-    <p>${element.author}<p>
-    <button>Remove</button>
-    <div>
+    <div id= "book${i}">
+    <p>${element.title}</p>
+    <p>${element.author}</p>
+    <button onclick = 'remove(${i})' >Remove</button>
+    </div>
     `
    });
   bookLibrary.innerHTML = bookDisplay
+}
+
+const remove = (field) => {
+  const BookIndex = books.findIndex((item, i) => i === field);
+  books.splice(BookIndex, 1);
+  localStorage.setItem('Book1', JSON.stringify(books))  
+  display();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
