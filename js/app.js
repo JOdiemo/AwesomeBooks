@@ -14,15 +14,15 @@ addBtn.addEventListener('click', (e) => {
 })
 
 const addBooks = (Author, Title) => {
-  if (Author !== '' && Title !== ""){
+  if (Author !== '' && Title !== ''){
     const obj = {
       title: Title,
-      author: Author
-    }
+      author: Author,
+    };
     books.push(obj);
     localStorage.setItem('Book1', JSON.stringify(books));
   }
-}
+};
 
 function display() {
   if (localStorage.getItem('Book1') == null) {
