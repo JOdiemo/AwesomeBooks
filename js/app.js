@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
+/* eslint-disable-next-line quotes */
 const addBtn = document.getElementsByClassName('addBtn')[0]
 const bookLibrary = document.getElementsByClassName('library')[0]
 let books = [];
@@ -42,7 +46,7 @@ function display() {
 const remove = (field) => {
   const BookIndex = books.findIndex((item, i) => i === field);
   books.splice(BookIndex, 1);
-  localStorage.setItem('Book1', JSON.stringify(books))  
+  localStorage.setItem('Book1', JSON.stringify(books))
   display();
 }
 
