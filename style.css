@@ -1,10 +1,13 @@
+html {
+  
+  font-size: 16px;
+}
 * {
   font-family: sans-serif;
   background-color: white;  
   overflow: hidden;
   font-weight: bold;
   -webkit-text-stroke: 0.02rem #000;
-
 }
 
 h1,h2 {
@@ -92,7 +95,6 @@ form input {
 }
 
 .book button {
-width: 17%;
 box-sizing: border-box;
 }
 
@@ -105,3 +107,11 @@ form button {
 button {
   box-shadow: 2px 2px 0 #000;
 }
+
+@media screen and (min-width: 768px) {
+ html {
+  font-size: 24px;
+ } 
+}
+
+
