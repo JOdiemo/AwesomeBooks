@@ -1,7 +1,7 @@
-html {
-  
+html  {
   font-size: 16px;
 }
+
 * {
   font-family: sans-serif;
   background-color: white;  
@@ -10,13 +10,13 @@ html {
   -webkit-text-stroke: 0.02rem #000;
 }
 
-h1,h2 {
+h1,
+h2  {
   margin: 0;
   font-size: 1.55rem;
-
 }
 
-body {
+body  {
   width: 100vw;
   margin: 0;
   display: flex;
@@ -38,6 +38,11 @@ main {
   border: 3px solid black;
   box-shadow: 3px 3px 0 0 #000 inset;
   width: 100%;
+}
+
+form * {
+  display: flex;
+  box-sizing: border-box;
 }
 
 .library > *:nth-child(even) {
@@ -87,11 +92,6 @@ form {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-}
-
-form * {
-  display: flex;
-  box-sizing: border-box;
 }
 
 form input {
