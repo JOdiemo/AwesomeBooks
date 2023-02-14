@@ -63,6 +63,10 @@ main {
 
 }
 
+button  {
+  box-shadow: 2px 2px 0 #000;
+}
+
 .book > button{
   
     margin: 0.2rem 0.5rem;
@@ -83,18 +87,18 @@ form {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  
 }
 
 form * {
   display: flex;
   box-sizing: border-box;
 }
+
 form input {
   width: 100%;
 }
 
-.book button {
+.book button  {
 box-sizing: border-box;
 }
 
@@ -104,14 +108,8 @@ form button {
   margin:0.1rem;
 }
 
-button {
-  box-shadow: 2px 2px 0 #000;
+@media screen and (min-width: 768px)  {
+  html  {
+    font-size: 24px;
+  }
 }
-
-@media screen and (min-width: 768px) {
- html {
-  font-size: 24px;
- } 
-}
-
-
