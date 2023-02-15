@@ -1,4 +1,4 @@
-import Book from './Book';
+import Book from './Book.js';
 
 const addBtn = document.getElementsByClassName('addBtn')[0];
 const bookLibrary = document.getElementsByClassName('library')[0];
@@ -35,7 +35,7 @@ function display() {
     bookDisplay += `
     <div class="book" id= "${i}">
     <p>"${element.title}" by ${element.author}</p>
-    <button class="removeBtn" onclick="removeBtn(${i})">Remove</button>
+    <button class="removeBtn" id="${i}">Remove</button>
     </div>
     `;
   });
@@ -48,10 +48,19 @@ addBtn.addEventListener('click', () => {
   library.addBooks(author, title);
 });
 
-function removeBtn(bookID) { // eslint-disable-line no-unused-vars
+function removeBtn(bookID) {
   library.remove(bookID);
   display();
 }
+
+const lib = document.querySelector(".library");
+lib.addEventListener("click", function(e){
+  if (e.target.classList.contains('removeBtn')) {
+      const bookID = e.target.id;
+      removeBtn(bookID);
+  }
+});
+console.log(lib);
 
 window.addEventListener('DOMContentLoaded', () => {
   display();
