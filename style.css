@@ -1,22 +1,22 @@
-html  {
+html {
   font-size: 16px;
 }
 
 * {
   font-family: sans-serif;
-  background-color: white;  
+  background-color: white;
   overflow: hidden;
   font-weight: bold;
   -webkit-text-stroke: 0.02rem #000;
 }
 
 h1,
-h2  {
+h2 {
   margin: 0;
   font-size: 1.55rem;
 }
 
-body  {
+body {
   width: 100vw;
   margin: 0;
   display: flex;
@@ -60,28 +60,25 @@ form * {
   background-color: transparent;
 }
 
-.book > p{
+.book > p {
   margin: 0.5rem;
   background-color: transparent;
   -webkit-text-stroke: 0.02rem #000;
   font-size: 1rem;
-
 }
 
-button  {
+button {
   box-shadow: 2px 2px 0 #000;
 }
 
 form button {
   width: max-content;
   align-self: flex-end;
-  margin:0.1rem;
+  margin: 0.1rem;
 }
 
-.book > button{
-  
-    margin: 0.2rem 0.5rem;
-  
+.book > button {
+  margin: 0.2rem 0.5rem;
 }
 
 .divider {
@@ -104,12 +101,12 @@ form input {
   width: 100%;
 }
 
-.book button  {
-box-sizing: border-box;
+.book button {
+  box-sizing: border-box;
 }
 
-@media screen and (min-width: 768px)  {
-  html  {
+@media screen and (min-width: 768px) {
+  html {
     font-size: 24px;
   }
 }

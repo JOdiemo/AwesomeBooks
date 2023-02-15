@@ -9,7 +9,7 @@ class BookArray {
   }
 
   addBooks(author, title) {
-    if (author !== '' && title !== '') {c
+    if (author !== '' && title !== '') {
       const book = new Book(author, title);
       this.books.push(book);
       localStorage.setItem('library', JSON.stringify(this.books));
