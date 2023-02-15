@@ -9,25 +9,29 @@
 </head>
 <body>
   <header class="book-section">
-    <h2 class="book-selector">Awesome Books</h2>
-    <ul class="nav-links">
-      <li class="linkname1"><a>List</a></li>
-      <li class="linkname2"><a>Add New</a></li>
-      <li class="linkname3"><a>Contact</a></li>
-    </ul>
+    <nav class="navbar">
+      <h2 class="book-selector">Awesome Books</h2>
+      <ul class="nav-links">
+        <li id="libraryLink" class="linkname1"><a href="#librarySection">List</a></li>
+        <li id="formLink" class="linkname2"><a href="#formSection">Add New</a></li>
+        <li id="contactLink" class="linkname3"><a href="#contactSection">Contact</a></li>
+      </ul>
+    </nav>
+    <span type="date" class="date" id="date">dd</span>
   </header>
-    <div class="content">
+  <section id="librarySection">
     <h1>All awesome Books</h1>
     <div class="library"></div>
-    <div class="divider"></div>
+  </section>
+  <section id="formSection">
     <h2>Add a new book</h2>
     <form class="form">
       <input type="text" id="title"  placeholder="Title">
       <input type="text" id="author" placeholder="Author">
       <button type="submit" class="addBtn">Add</button>
     </form>
-  </div>
-  <div class="contact">
+  </section>
+  <section id="contactSection">
     <h2 class="contact-title">Contact Information</h2>
     <p>Do you have any questions or you just want to say 'Hello'? <br> You can reach out to us!</p>
     <ul>
@@ -35,7 +39,7 @@
         <li>Our phone number: 004368663442</li>
         <li>Our address: Street Name, 22, 84603, City, Country</li>
     </ul>
-</div>
+  </section>
 <footer class="footer">
     <h3 class="footer-title">Copyright</h3>
 </footer>
