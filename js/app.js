@@ -54,14 +54,13 @@ function removeBtn(bookID) {
   display();
 }
 
-const lib = document.querySelector(".library");
-lib.addEventListener("click", function(e){
+const lib = document.querySelector('.library');
+lib.addEventListener('click', (e) => {
   if (e.target.classList.contains('removeBtn')) {
-      const bookID = e.target.id;
-      removeBtn(bookID);
+    const bookID = e.target.id;
+    removeBtn(bookID);
   }
 });
-console.log(lib);
 
 window.addEventListener('DOMContentLoaded', () => {
   display();
