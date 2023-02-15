@@ -10,12 +10,6 @@ html {
   -webkit-text-stroke: 0.02rem #000;
 }
 
-h1,
-h2 {
-  margin: 0;
-  font-size: 1.55rem;
-}
-
 body {
   width: 100%;
   height: 100vh;
@@ -23,35 +17,61 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 2%;
+  margin-left: 10px;
+  margin-right: 200px;
 }
 
 .content {
-  width: 50%;
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 2px;
-  margin-right: 2px;
+
 }
 
-main {
+.book-section {
+  width: 98%;
+  height: 6vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 5px;
   align-items: center;
-  width: 100%;
-  padding: 1rem 0.4rem 0;
-  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 15px;
+  border: 3px solid black;
 }
 
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+  width: 35%;
+}
+
+.linkname1,
+.linkname2,
+.linkname3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  width: inherit;
+  margin: 0 5px;
+  padding: 0 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.linkname1,
+.linkname2 {
+  border-right: 2px solid black;
+}
 .library:not(:empty) {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   box-shadow: 3px 3px 0 0 #000 inset;
-  width: 100%;
+  width: 97%;
 }
 
 form * {
@@ -117,6 +137,50 @@ form input {
 
 .book button {
   box-sizing: border-box;
+}
+
+.contact {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-weight: 700;
+}
+
+.contact ul {
+  margin-top: 20px;
+}
+
+.contact ul li {
+  list-style: disc;
+  margin-left: 50px;
+}
+
+.footer {
+  width: 98%;
+  height: 4vh;
+  border: 4px solid black;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: antiquewhite;
+}
+
+.footer-title {
+  margin-left: 30px;
 }
 
 @media screen and (min-width: 768px) {
