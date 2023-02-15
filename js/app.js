@@ -1,54 +1,66 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-unused-vars */
-/* eslint-disable-next-line quotes */
+/* eslint-disable import/extensions */
+import Book from './Book.js';
+
 const addBtn = document.getElementsByClassName('addBtn')[0];
 const bookLibrary = document.getElementsByClassName('library')[0];
-let books = [];
 
-addBtn.addEventListener('click', (e) => {
-  const author = document.getElementById('author').value.trim();
-  const title = document.getElementById('title').value.trim();
-  addBooks(author, title);
-  display();
-})
-
-const addBooks = (Author, Title) => {
-  if (Author !== '' && Title !== ''){
-    const obj = {
-      title: Title,
-      author: Author,
-    };
-    books.push(obj);
-    localStorage.setItem('Book1', JSON.stringify(books));
+class BookArray {
+  constructor() {
+    this.books = JSON.parse(localStorage.getItem('library')) || [];
   }
-};
+
+  addBooks(author, title) {
+    if (author !== '' && title !== '') {
+      const book = new Book(author, title);
+      this.books.push(book);
+      localStorage.setItem('library', JSON.stringify(this.books));
+    }
+  }
+
+  remove(field) {
+    this.books.splice(field, 1);
+    localStorage.setItem('library', JSON.stringify(this.books));
+  }
+}
+
+const library = new BookArray();
 
 function display() {
-  if (localStorage.getItem('Book1') == null) {
-    books = [];
+  if (localStorage.getItem('library') == null) {
+    library.books = [];
   } else {
-    books = JSON.parse(localStorage.getItem('Book1'));
+    library.books = JSON.parse(localStorage.getItem('library'));
   }
-  let bookDisplay = ``;
-  books.forEach((element, i) => {
+  let bookDisplay = '';
+  library.books.forEach((element, i) => {
     bookDisplay += `
-    <div id= "book${i}">
-    <p>${element.title}</p>
-    <p>${element.author}</p>
-    <button onclick = 'remove(${i})' >Remove</button>
+    <div class="book" id= "${i}">
+    <p>"${element.title}" by ${element.author}</p>
+    <button class="removeBtn" id="${i}">Remove</button>
     </div>
-    `
-   });
+    `;
+  });
   bookLibrary.innerHTML = bookDisplay;
 }
 
-const remove = (field) => {
-  const BookIndex = books.findIndex((item, i) => i === field);
-  books.splice(BookIndex, 1);
-  localStorage.setItem('Book1', JSON.stringify(books));
+addBtn.addEventListener('click', () => {
+  const author = document.getElementById('author').value.trim();
+  const title = document.getElementById('title').value.trim();
+  library.addBooks(author, title);
+});
+
+function removeBtn(bookID) {
+  library.remove(bookID);
   display();
 }
+
+const lib = document.querySelector('.library');
+lib.addEventListener('click', (e) => {
+  if (e.target.classList.contains('removeBtn')) {
+    const bookID = e.target.id;
+    removeBtn(bookID);
+  }
+});
 
 window.addEventListener('DOMContentLoaded', () => {
   display();
