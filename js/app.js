@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import Book from './Book.js';
 
 const addBtn = document.getElementsByClassName('addBtn')[0];
