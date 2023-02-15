@@ -15,5 +15,6 @@ module.exports = {
       js: 'always',
     },
     ],
+    'no-param-reassign': 0,
   },
 };

@@ -69,7 +69,6 @@ const sections = document.querySelectorAll('section');
 
 links.forEach((link) => {
   link.addEventListener('click', (e) => {
-
     e.preventDefault();
     const targetID = link.getAttribute('href');
     const targetSection = document.querySelector(targetID);
@@ -79,14 +78,13 @@ links.forEach((link) => {
         section.style.display = 'none';
       });
       targetSection.style.display = 'flex';
-      links.forEach((link) => {
-        link.classList.remove('active');
-      })
+      links.forEach((event) => {
+        event.classList.remove('active');
+      });
       link.classList.add('active');
     }
-  })
-})
-
+  });
+});
 
 function getDaySuffix(day) {
   if (day >= 11 && day <= 13) {
@@ -109,11 +107,13 @@ const month = currentDate.toLocaleString('default', { month: 'long' });
 const day = currentDate.getDate();
 const daySuff = getDaySuffix(day);
 const year = currentDate.getFullYear();
-const time = currentDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+const time = currentDate.toLocaleString('en-US', {
+  hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true,
+});
 
-const formattedDate = month + ' ' + day + daySuff + ', ' + year + ', ' + time;
+const formattedDate = `${month} ${day}${daySuff}, ${year}, ${time}`;
 
-document.getElementById("date").textContent = formattedDate;
+document.getElementById('date').textContent = formattedDate;
 
 window.addEventListener('DOMContentLoaded', () => {
   display();

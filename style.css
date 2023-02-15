@@ -41,6 +41,11 @@ section {
   gap: 2rem;
 }
 
+form * {
+  display: flex;
+  box-sizing: border-box;
+}
+
 .book-section {
   display: flex;
   flex-direction: column;
@@ -96,12 +101,12 @@ ul {
   padding: 0.5rem;
   font-weight: 700;
   cursor: pointer;
-  flex-grow:1;
+  flex-grow: 1;
   font-size: 0.8rem;
 }
 
 .linkname2 {
-  border-left: 2px solid black;;
+  border-left: 2px solid black;
   border-right: 2px solid black;
 }
 
@@ -111,11 +116,6 @@ ul {
   border: 1px solid black;
   box-shadow: 3px 3px 0 0 #000 inset;
   width: 97%;
-}
-
-form * {
-  display: flex;
-  box-sizing: border-box;
 }
 
 .library > *:nth-child(even) {
@@ -142,6 +142,13 @@ form * {
 
 button {
   box-shadow: 2px 2px 0 #000;
+}
+
+form button {
+  width: max-content;
+  align-self: flex-end;
+  margin: 0.1rem;
+  font-size: 0.8rem;
 }
 
 .book > button {
@@ -177,13 +184,6 @@ form input {
   height: 1.5rem;
 }
 
-form button {
-  width: max-content;
-  align-self: flex-end;
-  margin: 0.1rem;
-  font-size: 0.8rem;
-}
-
 .book button {
   box-sizing: border-box;
 }
@@ -217,7 +217,8 @@ form button {
   font-weight: lighter;
 }
 
-li a, li a:visited {
+li a,
+li a:visited {
   text-decoration: none;
   color: black;
 }
