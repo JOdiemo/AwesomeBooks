@@ -72,7 +72,6 @@ links.forEach((link) => {
     e.preventDefault();
     const targetID = link.getAttribute('href');
     const targetSection = document.querySelector(targetID);
-
     if (targetSection) {
       sections.forEach((section) => {
         section.style.display = 'none';
