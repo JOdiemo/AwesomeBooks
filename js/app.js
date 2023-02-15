@@ -60,7 +60,6 @@ lib.addEventListener('click', (e) => {
     const bookID = e.target.id;
     removeBtn(bookID);
   }
-  
 });
 
 window.addEventListener('DOMContentLoaded', () => {
