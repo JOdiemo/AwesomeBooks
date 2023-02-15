@@ -33,7 +33,7 @@ function display() {
   let bookDisplay = '';
   library.books.forEach((element, i) => {
     bookDisplay += `
-    <div class="book" id= "${i}">
+    <div class="book flex" id= "${i}">
     <p>"${element.title}" by ${element.author}</p>
     <button class="removeBtn" id="${i}">Remove</button>
     </div>
