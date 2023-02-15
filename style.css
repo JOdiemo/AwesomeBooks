@@ -71,14 +71,12 @@ button {
   box-shadow: 2px 2px 0 #000;
 }
 
-form button {
+.book > button {
+  margin: 0.2rem 0.5rem;
   width: max-content;
   align-self: flex-end;
   margin: 0.1rem;
-}
-
-.book > button {
-  margin: 0.2rem 0.5rem;
+  box-sizing: border-box;
 }
 
 .divider {
@@ -99,10 +97,6 @@ form {
 
 form input {
   width: 100%;
-}
-
-.book button {
-  box-sizing: border-box;
 }
 
 @media screen and (min-width: 768px) {
